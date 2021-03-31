@@ -8,6 +8,12 @@ import java.lang.Math.pow
 import java.lang.NumberFormatException
 import kotlin.math.*
 
+/**
+ * Created by Techpass Master on 26-March-21.
+ * Website - https://techpassmaster.com/
+ * Email id - hello@techpassmaster.com
+ */
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
