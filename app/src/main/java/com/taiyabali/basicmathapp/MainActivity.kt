@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         with(binding) {
 
-//            sum
+            //  sum
             btnSum.setOnClickListener {
 
                 try {
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            sub
+            //  sub
             btnSub.setOnClickListener {
 
                 try {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            multiply
+            //  multiply
             btnMultiply.setOnClickListener {
 
                 try {
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            divide
+            //  divide
             btnDivide.setOnClickListener {
 
                 try {
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            sin
+            //  sin
             btnSin.setOnClickListener {
 
                 try {
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            cos
+            // cos
             btnCos.setOnClickListener {
 
                 try {
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            tan
+            //  tan
             btnTan.setOnClickListener {
 
                 try {
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            root
+            //  root
             btnRoot.setOnClickListener {
 
                 try {
@@ -121,8 +121,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-
-//            square
+            //  square
             btnPower2.setOnClickListener {
 
                 try {
@@ -133,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//            cubic
+            //  cubic
             btnPower3.setOnClickListener {
 
                 try {
@@ -147,12 +146,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getInput1(): Int {
-        return Integer.parseInt(binding.editText1.text.toString())
-    }
+    // oneLine fun for getting first value from EditText
+    private fun getInput1(): Int = Integer.parseInt(binding.editText1.text.toString())
 
-    private fun getInput2(): Int {
-        return Integer.parseInt(binding.editText2.text.toString())
-    }
-
+    // oneLine fun for getting second value from EditText
+    private fun getInput2(): Int = Integer.parseInt(binding.editText2.text.toString())
 }
