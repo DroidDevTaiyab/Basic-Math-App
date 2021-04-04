@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.taiyabali.basicmathapp.databinding.ActivityMainBinding
-import java.lang.Math.pow
 import java.lang.NumberFormatException
 import kotlin.math.*
 
@@ -17,8 +16,6 @@ import kotlin.math.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var num1: String
-    private lateinit var num2: String
     private lateinit var result: String
 
 
@@ -27,7 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // fun for handle buttons
         onButtonClick()
+
     }
 
     private fun onButtonClick() {
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 //            multiply
-            btnMulti.setOnClickListener {
+            btnMultiply.setOnClickListener {
 
                 try {
                     result = (getInput1() * getInput2()).toString()
@@ -127,7 +126,7 @@ class MainActivity : AppCompatActivity() {
             btnPower2.setOnClickListener {
 
                 try {
-                    result = pow(getInput1().toDouble(),2.0).toString()
+                    result = getInput1().toDouble().pow(2.0).toString()
                     txtResult.text = ("square: $result")
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
@@ -138,7 +137,7 @@ class MainActivity : AppCompatActivity() {
             btnPower3.setOnClickListener {
 
                 try {
-                    result = Math.pow(getInput1().toDouble(),3.0).toString()
+                    result = getInput1().toDouble().pow(3.0).toString()
                     txtResult.text = ("cubic: $result")
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
@@ -148,11 +147,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun getInput1(): Int {
+    private fun getInput1(): Int {
         return Integer.parseInt(binding.editText1.text.toString())
     }
 
-    fun getInput2(): Int {
+    private fun getInput2(): Int {
         return Integer.parseInt(binding.editText2.text.toString())
     }
 
