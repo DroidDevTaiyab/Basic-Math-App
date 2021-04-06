@@ -142,7 +142,6 @@ class MainActivity : AppCompatActivity() {
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
     }
