@@ -37,9 +37,14 @@ class MainActivity : AppCompatActivity() {
             //  sum
             btnSum.setOnClickListener {
 
+                // create lambda fun
+                // 1- val sum = ::sum()
+                // 2- click on yellow bulb and add this@MainActivity
+                // 3- again click on yellow bulb and add select convert ref. to lambda
+
                 try {
-                    result = (getInput1() + getInput2()).toString()
-                    txtResult.text = ("sum: $result")
+                    val sum = { a: Int, b: Int -> this@MainActivity.sum(a, b) }
+                    tvResult.text = ("Sum: " + sum(getInput1(), getInput2()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -49,8 +54,8 @@ class MainActivity : AppCompatActivity() {
             btnSub.setOnClickListener {
 
                 try {
-                    result = (getInput1() - getInput2()).toString()
-                    txtResult.text = ("sub: $result")
+                    val sub = { a: Int, b: Int -> this@MainActivity.sub(a, b) }
+                    tvResult.text = ("Sub: " + sub(getInput1(), getInput2()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -60,8 +65,8 @@ class MainActivity : AppCompatActivity() {
             btnMultiply.setOnClickListener {
 
                 try {
-                    result = (getInput1() * getInput2()).toString()
-                    txtResult.text = ("multiply: $result")
+                    val multi = { a: Int, b: Int -> this@MainActivity.multi(a, b) }
+                    tvResult.text = ("Multiply: " + multi(getInput1(), getInput2()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -71,30 +76,32 @@ class MainActivity : AppCompatActivity() {
             btnDivide.setOnClickListener {
 
                 try {
-                    result = (getInput1() / getInput2()).toString()
-                    txtResult.text = ("divide: $result")
+                    val divide = { a: Double, b: Double -> this@MainActivity.divide(a, b) }
+                    tvResult.text = ("Divide: " + divide(getInput1().toDouble(), getInput2().toDouble()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             //  sin
             btnSin.setOnClickListener {
 
                 try {
-                    result = sin(getInput1().toDouble()).toString()
-                    txtResult.text = ("sin: $result")
+                    val sin = { a: Double -> this@MainActivity.sinNumber(a) }
+                    tvResult.text = ("sin: " + sin(getInput1().toDouble()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             // cos
             btnCos.setOnClickListener {
 
                 try {
-                    result = cos(getInput1().toDouble()).toString()
-                    txtResult.text = ("cos: $result")
+                    val cos = { a: Double -> this@MainActivity.cosNumber(a) }
+                    tvResult.text = ("cos: " + cos(getInput1().toDouble()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -104,8 +111,8 @@ class MainActivity : AppCompatActivity() {
             btnTan.setOnClickListener {
 
                 try {
-                    result = tan(getInput1().toDouble()).toString()
-                    txtResult.text = ("tan: $result")
+                    val tan = { a: Double -> this@MainActivity.tanNumber(a) }
+                    tvResult.text = ("cos: " + tan(getInput1().toDouble()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -115,8 +122,8 @@ class MainActivity : AppCompatActivity() {
             btnRoot.setOnClickListener {
 
                 try {
-                    result = sqrt(getInput1().toDouble()).toString()
-                    txtResult.text = ("root: $result")
+                    val root = { a: Double -> this@MainActivity.root(a) }
+                    tvResult.text = ("root: " + root(getInput1().toDouble()))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
@@ -126,22 +133,24 @@ class MainActivity : AppCompatActivity() {
             btnPower2.setOnClickListener {
 
                 try {
-                    result = getInput1().toDouble().pow(2.0).toString()
-                    txtResult.text = ("square: $result")
+                    val square = { a: Double -> this@MainActivity.square(a) }
+                    tvResult.text = ("square: " + square(getInput1().toDouble().pow(2.0)))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             //  cubic
             btnPower3.setOnClickListener {
 
                 try {
-                    result = getInput1().toDouble().pow(3.0).toString()
-                    txtResult.text = ("cubic: $result")
+                    val cubic = { a: Double -> this@MainActivity.cubic(a) }
+                    tvResult.text = ("cubic: " + cubic(getInput1().toDouble().pow(3.0)))
                 } catch (nfe: NumberFormatException) {
                     Toast.makeText(this@MainActivity, "Wrong Number Format", Toast.LENGTH_SHORT).show()
                 }
+
             }
         }
     }
@@ -151,4 +160,55 @@ class MainActivity : AppCompatActivity() {
 
     // oneLine fun for getting second value from EditText
     private fun getInput2(): Int = Integer.parseInt(binding.editText2.text.toString())
+
+
+    // fun for sum two number
+    private fun sum(a: Int, b: Int): Int {
+        return a + b
+    }
+
+    // fun for sun two number
+    private fun sub(a: Int, b: Int): Int {
+        return a - b
+    }
+
+    // fun for multiply two number
+    private fun multi(a: Int, b: Int): Int {
+        return a * b
+    }
+
+    // fun for divide two number
+    private fun divide(a: Double, b: Double): Double {
+        return a / b
+    }
+
+    // fun for find the sin of a number
+    private fun sinNumber(a: Double): Double {
+        return sin(a)
+    }
+
+    // fun for find the cos of a number
+    private fun cosNumber(a: Double): Double {
+        return cos(a)
+    }
+
+    // fun for find the tan of a number
+    private fun tanNumber(a: Double): Double {
+        return tan(a)
+    }
+
+    // fun for find the root of a number
+    private fun root(a: Double): Double {
+        return sqrt(a)
+    }
+
+    // fun for find the square of a number
+    private fun square(a: Double): Double {
+        return a
+    }
+
+    // fun for find the cubic of a number
+    private fun cubic(a: Double): Double {
+        return a
+    }
 }
