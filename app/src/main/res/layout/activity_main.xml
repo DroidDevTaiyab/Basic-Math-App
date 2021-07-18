@@ -18,16 +18,17 @@
             android:fontFamily="cursive"
             android:gravity="center_horizontal"
             android:text="@string/title"
-            android:textSize="36sp"
             android:textColor="@color/black"
+            android:textSize="32dp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editText1"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:gravity="center"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +36,9 @@
 
         <EditText
             android:id="@+id/editText2"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,68 +50,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:gravity="end"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/btn_sum"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-        <Button
-            android:id="@+id/btn_tan"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="tan"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/btn_root"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cos" />
-
-        <Button
-            android:id="@+id/btn_divide"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="/"
-            app:layout_constraintBottom_toTopOf="@+id/btn_sin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
-
-        <Button
-            android:id="@+id/btn_power3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="x3"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_power2" />
-
-        <Button
-            android:id="@+id/btn_cos"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="cos"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/btn_tan"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_sin" />
-
-        <Button
-            android:id="@+id/btn_root"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="√"
-            app:layout_constraintBottom_toTopOf="@+id/btn_power2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_tan" />
 
         <Button
             android:id="@+id/btn_sum"
@@ -121,18 +66,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_result" />
-
-        <Button
-            android:id="@+id/btn_sin"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="sin"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/btn_cos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_divide" />
 
         <Button
             android:id="@+id/btn_sub"
@@ -156,6 +89,63 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_sub" />
 
+        <Button
+            android:id="@+id/btn_divide"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="/"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
+
+        <Button
+            android:id="@+id/btn_sin"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="sin"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_cos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_divide" />
+
+        <Button
+            android:id="@+id/btn_cos"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="cos"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_tan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sin" />
+
+        <Button
+            android:id="@+id/btn_tan"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="tan"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_root"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cos" />
+
+        <Button
+            android:id="@+id/btn_root"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="√"
+            app:layout_constraintBottom_toTopOf="@+id/btn_power2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tan" />
 
         <Button
             android:id="@+id/btn_power2"
@@ -168,6 +158,17 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_root" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <Button
+            android:id="@+id/btn_power3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="x3"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_power2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
